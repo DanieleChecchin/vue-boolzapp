@@ -63,99 +63,15 @@
 
                         <!--Chat-->
                         <ul class="chat">
-                            <li class="flex active">
+                            <li v-for="(contact, index) in contacts" class="flex">
                                 <div class="leftChat flex">
-                                    <img src="img/avatar_1.png" alt="">
+                                    <img :src="contact.avatar" alt="Immagine del profilo">
                                     <div class="details">
-                                        <div class="hisname">Michele</div>
+                                        <div class="hisname"> {{ contact.name }} </div>
                                         <div class="access">Ultimo messaggio inviato</div>
                                     </div>
                                 </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_2.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Fabio</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_3.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Samuele</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_4.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Alessandro B.</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_5.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Alessandro L.</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_6.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Claudia</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_7.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Federico</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
-                                    <div class="time">12:00</div>
-                                </div>
-                            </li>
-                            <li class="flex">
-                                <div class="leftChat flex">
-                                    <img src="img/avatar_8.png" alt="">
-                                    <div class="details">
-                                        <div class="hisname">Davide</div>
-                                        <div class="access">Ultimo messaggio inviato</div>
-                                    </div>
-                                </div>
-                                <div class="rightChat">
+                                <div class="righChat">
                                     <div class="time">12:00</div>
                                 </div>
                             </li>
