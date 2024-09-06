@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Boolzapp</title>
 
+    <!--FontAwesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--CSS-->
     <link rel="stylesheet" href="style.css">
     <!--JS-->
@@ -17,7 +21,202 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
 
+        <!--Container che racchiude tutto il blocco-->
+        <div class="container">
 
+            <!--Contenitore principale dei contatti e messaggi-->
+            <div class="main flex">
+
+                <!--Contatti-->
+                <div class="contact">
+
+                    <!--Header dei contatti-->
+                    <header class="headerContact flex">
+                        <div class="leftBarContact flex">
+                            <img src="img/avatar_io.png" alt="Io">
+                            <div class="myName">Sofia</div>
+                        </div>
+                        <div class="rightBarContact flex">
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                    </header>
+
+                    <!--Corpo principale dei contatti-->
+                    <main class="mainContact">
+
+                        <!--Attiva notiche lightblue-->
+                        <div class="notification flex">
+                            <i class="fa-regular fa-bell-slash"></i>
+                            <div class="details">
+                                <div class="getNotification">Ricevi notiche di nuovi messaggi</div>
+                                <a href="#" class="activeNotification">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+
+                        <!--Input cerca o inizia nuova chat-->
+                        <div class="contactInput">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+
+                        <!--Chat-->
+                        <ul class="chat">
+                            <li class="flex active">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_1.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Michele</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_2.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Fabio</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_3.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Samuele</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_4.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Alessandro B.</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_5.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Alessandro L.</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_6.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Claudia</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_7.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Federico</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                            <li class="flex">
+                                <div class="leftChat flex">
+                                    <img src="img/avatar_8.png" alt="">
+                                    <div class="details">
+                                        <div class="hisname">Davide</div>
+                                        <div class="access">Ultimo messaggio inviato</div>
+                                    </div>
+                                </div>
+                                <div class="rightChat">
+                                    <div class="time">12:00</div>
+                                </div>
+                            </li>
+                        </ul>
+
+
+                    </main>
+                </div>
+
+                <!--Messaggi-->
+                <div class="messages">
+
+                    <!--Header dei messaggi-->
+                    <header class="headerMessages flex">
+                        <div class="leftBarMessages flex">
+                            <img src="img/avatar_1.png" alt="Michele">
+                            <div class="details">
+                                <div class="hisname">Michele</div>
+                                <div class="access">Ultimo accesso oggi alle 12:00</div>
+                            </div>
+                        </div>
+                        <div class="rightBarMessages flex">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+
+                    </header>
+
+                    <!--Corpo principale dei messaggi-->
+                    <div class="mainMessages">
+                        <div class="containerMessages flex">
+                            <div class="sent">
+                                <div class="sentText">Hai portato a spasso il cane?</div>
+                                <div class="sentTime">15:30</div>
+                            </div>
+                            <div class="sent">
+                                <div class="sentText">Ricordati di stendere i panni</div>
+                                <div class="sentTime">15:30</div>
+                            </div>
+                            <div class="received">
+                                <div class="receivedText">Tutto fatto!</div>
+                                <div class="receivedTime">16:15</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Footer dei messaggi-->
+                    <footer class="footerMessages flex">
+                        <div class="emoji">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <input type="text" placeholder="Scrivi un messaggio">
+                        <div class="audio">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

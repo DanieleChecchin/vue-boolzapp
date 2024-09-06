@@ -4,13 +4,195 @@
     box-sizing: border-box;
 }
 
-/*
+
 body {
     font-family: Lato;
+    background-color: #DADBD3;
 }
-*/
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.flex {
+    display: flex;
+}
+
+
+/* HEADERS */
+
+.contact {
+    flex-basis: 40%;
+    background-color: white;
+}
+
+.messages {
+    flex-basis: 60%;
+}
+
+.headerContact,
+.headerMessages {
+    height: 60px;
+    background-color: #EAEAEA;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+
+.leftBarContact {
+    width: 70%;
+    align-items: center;
+}
+
+img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.rightBarContact,
+.rightBarMessages {
+    gap: 15px;
+}
+
+.leftBarMessages {
+    width: 40%;
+    align-items: center;
+}
+
+.access,
+.time {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+header i {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+/* Notification*/
+
+.notification {
+    height: 60px;
+    background-color: #8EDAFC;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.notification i {
+    background-color: white;
+    border-radius: 50%;
+    color: #8EDAFC;
+    font-size: 25px;
+    padding: 10px;
+}
+
+/* Contact Input */
+
+.contactInput {
+    background-color: white;
+    padding: 10px;
+    height: 40px;
+}
+
+.contactInput i {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.contactInput input {
+    border: 0;
+    width: 80%;
+    margin-left: 20px;
+}
+
+/* Chat */
+ul {
+    list-style-type: none;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+.chat li {
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.details {
+    margin-left: 15px;
+}
+
+.active {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Main Messages */
+
+.mainMessages {
+    height: 580px;
+    background-image: url(img/mine.png);
+    overflow-y: scroll;
+}
+
+.containerMessages {
+    max-width: 500px;
     margin: 0 auto;
+    padding: 50px 0;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.sent,
+.received {
+    border-radius: 5px;
+    max-width: 200px;
+    margin-bottom: 10px;
+}
+
+.sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.sentText,
+.receivedText {
+    padding: 5px 10px;
+}
+
+.sentTime,
+.receivedTime {
+    text-align: end;
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.received {
+    background-color: white;
+}
+
+/* Footer */
+
+footer {
+    height: 60px;
+    background-color: #F3EEEA;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emoji,
+.audio {
+    flex-basis: 15%;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 20px;
+}
+
+footer input {
+    flex-basis: 70%;
+    border: 0;
+    padding: 10px;
 }
