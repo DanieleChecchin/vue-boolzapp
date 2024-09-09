@@ -183,6 +183,15 @@ createApp({
             return today;
         },
 
+        receivedText() {
+            let thisContact = this.contacts[this.activeIndex];
+            thisContact.messages.push({
+                date: this.formattedTime(),
+                message: 'Ok',
+                status: 'received'
+            })
+        },
+
         addNewMessage() {
             let thisContact = this.contacts[this.activeIndex];
             thisContact.messages.push({
@@ -190,6 +199,8 @@ createApp({
                 message: this.newMessage,
                 status: 'sent'
             });
+            this.newMessage = '';
+            setTimeout(this.receivedText, 1000);
         }
     },
 
