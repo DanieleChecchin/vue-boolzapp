@@ -122,6 +122,7 @@ ul {
     align-items: center;
     padding: 10px;
     border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .details {
@@ -160,13 +161,11 @@ ul {
     align-self: flex-end;
 }
 
-.sentText,
-.receivedText {
+.text {
     padding: 5px 10px;
 }
 
-.sentTime,
-.receivedTime {
+.time {
     text-align: end;
     font-size: 10px;
     color: rgba(0, 0, 0, 0.5);

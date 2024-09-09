@@ -63,7 +63,7 @@
 
                         <!--Chat-->
                         <ul class="chat">
-                            <li v-for="(contact, index) in contacts" class="flex">
+                            <li v-for="(contact, index) in contacts" class="flex" @click="changeContact(index)">
                                 <div class="leftChat flex">
                                     <img :src="contact.avatar" alt="Immagine del profilo">
                                     <div class="details">
@@ -76,8 +76,6 @@
                                 </div>
                             </li>
                         </ul>
-
-
                     </main>
                 </div>
 
@@ -87,9 +85,9 @@
                     <!--Header dei messaggi-->
                     <header class="headerMessages flex">
                         <div class="leftBarMessages flex">
-                            <img src="img/avatar_1.png" alt="Michele">
+                            <img :src="contacts[activeIndex].avatar" alt="Michele">
                             <div class="details">
-                                <div class="hisname">Michele</div>
+                                <div class="hisname"> {{ contacts[activeIndex].name }} </div>
                                 <div class="access">Ultimo accesso oggi alle 12:00</div>
                             </div>
                         </div>
@@ -103,7 +101,19 @@
 
                     <!--Corpo principale dei messaggi-->
                     <div class="mainMessages">
-                        <div class="containerMessages flex">
+
+                        <div v-for="(message, index) in contacts[activeIndex].messages" class="containerMessages flex">
+                            <div :class="message.status"></div>
+                            <div class="text" :class="(message.status === 'sent') ? 'sent': 'received'"> {{
+                                message.message }} </div>
+                            <div class=" time"> {{ message.date }} </div>
+                        </div>
+
+
+
+
+
+                        <!--<div class="containerMessages flex">
                             <div class="sent">
                                 <div class="sentText">Hai portato a spasso il cane?</div>
                                 <div class="sentTime">15:30</div>
@@ -116,7 +126,7 @@
                                 <div class="receivedText">Tutto fatto!</div>
                                 <div class="receivedTime">16:15</div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                     <!--Footer dei messaggi-->
