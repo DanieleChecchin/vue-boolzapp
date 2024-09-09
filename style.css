@@ -144,7 +144,7 @@ ul {
 .containerMessages {
     max-width: 500px;
     margin: 0 auto;
-    padding: 50px 0;
+    padding: 15px 0;
     flex-direction: column;
     font-size: 14px;
 }
@@ -152,8 +152,7 @@ ul {
 .sent,
 .received {
     border-radius: 5px;
-    max-width: 200px;
-    margin-bottom: 10px;
+    max-width: 220px;
 }
 
 .sent {
@@ -166,9 +165,9 @@ ul {
 }
 
 .time {
-    text-align: end;
     font-size: 10px;
     color: rgba(0, 0, 0, 0.5);
+    text-align: end;
 }
 
 .received {

@@ -103,30 +103,12 @@
                     <div class="mainMessages">
 
                         <div v-for="(message, index) in contacts[activeIndex].messages" class="containerMessages flex">
-                            <div :class="message.status"></div>
-                            <div class="text" :class="(message.status === 'sent') ? 'sent': 'received'"> {{
-                                message.message }} </div>
-                            <div class=" time"> {{ message.date }} </div>
+                            <div :class="message.status">
+                                <div class="text" :class="(message.status === 'sent') ? 'sent': 'received'"> {{
+                                    message.message }} </div>
+                                <div class="time"> {{ message.date }} </div>
+                            </div>
                         </div>
-
-
-
-
-
-                        <!--<div class="containerMessages flex">
-                            <div class="sent">
-                                <div class="sentText">Hai portato a spasso il cane?</div>
-                                <div class="sentTime">15:30</div>
-                            </div>
-                            <div class="sent">
-                                <div class="sentText">Ricordati di stendere i panni</div>
-                                <div class="sentTime">15:30</div>
-                            </div>
-                            <div class="received">
-                                <div class="receivedText">Tutto fatto!</div>
-                                <div class="receivedTime">16:15</div>
-                            </div>
-                        </div>-->
                     </div>
 
                     <!--Footer dei messaggi-->
@@ -134,7 +116,8 @@
                         <div class="emoji">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
-                        <input type="text" placeholder="Scrivi un messaggio">
+                        <input type="text" placeholder="Scrivi un messaggio" v-model="newMessage"
+                            @keyup.enter="addNewMessage">
                         <div class="audio">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
@@ -143,6 +126,8 @@
             </div>
         </div>
     </div>
+    <!--Luxon-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
 </body>
 
 </html>

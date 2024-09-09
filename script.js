@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activeIndex: 0,
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -172,9 +173,30 @@ createApp({
     methods: {
         changeContact(index) {
             this.activeIndex = index;
+        },
+
+        formattedTime() {
+            const DateTime = luxon.DateTime;
+            let today = DateTime.now().toString();
+            const dateTime = DateTime.fromISO(today);
+            today = dateTime.toLocaleString(DateTime.TIME_24_SIMPLE);
+            return today;
+        },
+
+        addNewMessage() {
+            let thisContact = this.contacts[this.activeIndex];
+            thisContact.messages.push({
+                date: this.formattedTime(),
+                message: this.newMessage,
+                status: 'sent'
+            });
         }
-    }
+    },
+
 
 }).mount('#app')
 
+
+//Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e
+//digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 
