@@ -5,6 +5,7 @@ createApp({
         return {
             activeIndex: 0,
             newMessage: '',
+            search: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -193,21 +194,27 @@ createApp({
         },
 
         addNewMessage() {
-            let thisContact = this.contacts[this.activeIndex];
-            thisContact.messages.push({
+            let contact = this.contacts[this.activeIndex];
+            contact.messages.push({
                 date: this.formattedTime(),
                 message: this.newMessage,
                 status: 'sent'
             });
             this.newMessage = '';
             setTimeout(this.receivedText, 1000);
-        }
+        },
+
     },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter((contact) => (contact.name.includes(this.search)));
+        },
+    }
 
 
 }).mount('#app')
 
 
-//Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e
-//digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-
+//Ricerca utenti: scrivendo qualcosa nell’input a sinistra,
+//vengono visualizzati solo i contatti il cui nome contiene le lettere inserite
+// (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)

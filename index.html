@@ -58,12 +58,12 @@
                         <!--Input cerca o inizia nuova chat-->
                         <div class="contactInput">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input type="text" placeholder="Cerca o inizia una nuova chat" v-model="search">
                         </div>
 
                         <!--Chat-->
                         <ul class="chat">
-                            <li v-for="(contact, index) in contacts" class="flex" @click="changeContact(index)">
+                            <li v-for="(contact, index) in filteredContacts" class="flex" @click="changeContact(index)">
                                 <div class="leftChat flex">
                                     <img :src="contact.avatar" alt="Immagine del profilo">
                                     <div class="details">
@@ -104,8 +104,7 @@
 
                         <div v-for="(message, index) in contacts[activeIndex].messages" class="containerMessages flex">
                             <div :class="message.status">
-                                <div class="text" :class="(message.status === 'sent') ? 'sent': 'received'"> {{
-                                    message.message }} </div>
+                                <div class="text"> {{ message.message }} </div>
                                 <div class="time"> {{ message.date }} </div>
                             </div>
                         </div>
